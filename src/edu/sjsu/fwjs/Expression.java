@@ -94,7 +94,7 @@ class BinOpExpr implements Expression {
 		case MULTIPLY:
 			return new IntVal(val1 * val2);
 		case MOD:
-			return new IntVal(val1 * val2);
+			return new IntVal(val1 % val2);
 		case GT: 
 			return new BoolVal(val1 > val2);
 		case GE: 
