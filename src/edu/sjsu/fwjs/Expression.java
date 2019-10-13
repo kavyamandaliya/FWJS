@@ -163,8 +163,9 @@ class SeqExpr implements Expression {
 	}
 
 	public Value evaluate(Environment env) {
-		// YOUR CODE HERE
-		return null;
+		 Value v = e1.evaluate(env);
+	     return e2.evaluate(env);
+		
 	}
 }
 
