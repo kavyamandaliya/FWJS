@@ -28,7 +28,13 @@ public class Environment {
      */
     public Value resolveVar(String varName) {
         // YOUR CODE HERE
-        return null;
+    	if(env.containsKey(varName)) return env.get(varName);
+    	else if(outerEnv != null) {
+    		if(outerEnv.env.containsKey(varName)) {
+    			return outerEnv.env.get(varName);
+    		}
+    	}
+        return new NullVal();
     }
 
     /**
@@ -37,6 +43,14 @@ public class Environment {
      * or any of the function's outer scopes, the var is stored in the global scope.
      */
     public void updateVar(String key, Value v) {
+    	if(env.containsKey(key)) {
+    		env.put(key, v);
+    	}
+    	else if(outerEnv != null) {
+    		outerEnv.updateVar(key, v);
+    	}
+    	createVar(key, v);
+
         // YOUR CODE HERE
     }
 
@@ -46,6 +60,11 @@ public class Environment {
      * a RuntimeException is thrown.
      */
     public void createVar(String key, Value v) {
+    	if(env.containsKey(key)) {
+    		//already done
+    		throw new RuntimeException("Already done");
+    	}
+    	env.put(key, v);
         // YOUR CODE HERE
     }
 }
