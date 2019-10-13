@@ -85,14 +85,18 @@ class BinOpExpr implements Expression {
 		int val2 = v2.toInt();
 
 		switch (op) {
-			case SUBTRACT:  return new IntVal(val1 - val2);
-			case ADD: return new IntVal(val1 + val2);
-			case DIVIDE: return new IntVal(val1 / val2);
-			case MULTIPLY: return new IntVal(val1 * val2);
-			
+		case SUBTRACT:
+			return new IntVal(val1 - val2);
+		case ADD:
+			return new IntVal(val1 + val2);
+		case DIVIDE:
+			return new IntVal(val1 / val2);
+		case MULTIPLY:
+			return new IntVal(val1 * val2);
+
 		}
-		
-		return null;
+
+		return new NullVal();
 	}
 }
 
@@ -111,8 +115,14 @@ class IfExpr implements Expression {
 	}
 
 	public Value evaluate(Environment env) {
-		// code here
-		return null;
+		BoolVal condBool = (BoolVal) this.cond.evaluate(env);
+		boolean cb = condBool.toBoolean();
+
+		if (cb)
+			return this.thn.evaluate(env);
+		else if (!cb)
+			return this.els.evaluate(env);
+		return new NullVal();
 	}
 }
 
@@ -129,14 +139,14 @@ class WhileExpr implements Expression {
 	}
 
 	public Value evaluate(Environment env) {
-		BoolVal bv = (BoolVal)cond.evaluate(env); 
-		boolean bool = bv.toBoolean(); 
-		
+		BoolVal bv = (BoolVal) cond.evaluate(env);
+		boolean bool = bv.toBoolean();
+
 		while (bool) {
-			body.evaluate(env); 
+			body.evaluate(env);
 		}
-		
-		return null;
+
+		return new NullVal();
 	}
 }
 
