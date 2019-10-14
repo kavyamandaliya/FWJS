@@ -98,17 +98,16 @@ class BinOpExpr implements Expression {
 		case GT: 
 			return new BoolVal(val1 > val2);
 		case GE: 
-			return new BoolVal(val1==val2 || val1>val2);
+			return new BoolVal(val1>=val2);
 		case LT: 
 			return new BoolVal(val1 < val2);
 		case LE: 
 			return new BoolVal(val1 <= val2);
 		case EQ: 
 			return new BoolVal(val1 == val2);
+		default: return new NullVal(); 
 
 		}
-
-		return new NullVal();
 	}
 }
 
@@ -151,14 +150,13 @@ class WhileExpr implements Expression {
 	}
 
 	public Value evaluate(Environment env) {
-		BoolVal bv = (BoolVal) cond.evaluate(env);
+		BoolVal bv = (BoolVal)cond.evaluate(env);
 		boolean bool = bv.toBoolean();
-
 		while (bool) {
-			body.evaluate(env);
+			 body.evaluate(env);
 		}
-
 		return new NullVal();
+		
 	}
 }
 
@@ -175,9 +173,8 @@ class SeqExpr implements Expression {
 	}
 
 	public Value evaluate(Environment env) {
-		 Value v = e1.evaluate(env);
-	     return e2.evaluate(env);
-		
+		e1.evaluate(env);
+		return e2.evaluate(env);
 	}
 }
 
@@ -196,6 +193,7 @@ class VarDeclExpr implements Expression {
 	public Value evaluate(Environment env) {
 		env.createVar(varName, exp.evaluate(env)); 
 		return env.resolveVar(varName); 
+		
 	}
 }
 
@@ -249,12 +247,9 @@ class FunctionAppExpr implements Expression {
 	}
 
 	public Value evaluate(Environment env) {
-		ClosureVal v = (ClosureVal) f.evaluate(env);
-		List<Value> argEval = new ArrayList<>(); 
-		for (Expression e: args) {
-			argEval.add(e.evaluate(env)); 
-		}
-		return v.apply(argEval); 
-		
+		ArrayList<Value> eval = new ArrayList<>();
+		for(Expression arg: args) { eval.add(arg.evaluate(env)); }
+		ClosureVal closure = (ClosureVal) f.evaluate(env);
+		return closure.apply(eval);
 	}
 }

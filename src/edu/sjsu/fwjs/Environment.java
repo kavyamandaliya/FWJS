@@ -48,7 +48,10 @@ public class Environment {
     	else if(outerEnv != null) {
     		outerEnv.updateVar(key, v);
     	}
-    	createVar(key, v);
+    	else {
+    		createVar(key, v);
+    	}
+    	
     }
 
     /**
