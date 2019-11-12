@@ -383,21 +383,18 @@ public class FeatherweightJavaScriptParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
-	public static class VardeclarationContext extends ExprContext {
-		public TerminalNode VAR() { return getToken(FeatherweightJavaScriptParser.VAR, 0); }
-		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
-		public TerminalNode ASSIGN() { return getToken(FeatherweightJavaScriptParser.ASSIGN, 0); }
+	public static class ExprinParenthesisContext extends ExprContext {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public VardeclarationContext(ExprContext ctx) { copyFrom(ctx); }
+		public ExprinParenthesisContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterVardeclaration(this);
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterExprinParenthesis(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitVardeclaration(this);
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitExprinParenthesis(this);
 		}
 	}
 	public static class MulDivModContext extends ExprContext {
@@ -421,121 +418,34 @@ public class FeatherweightJavaScriptParser extends Parser {
 			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitMulDivMod(this);
 		}
 	}
-	public static class VarrefContext extends ExprContext {
+	public static class FunctionApplicationContext extends ExprContext {
 		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
-		public VarrefContext(ExprContext ctx) { copyFrom(ctx); }
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public FunctionApplicationContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterVarref(this);
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterFunctionApplication(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitVarref(this);
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitFunctionApplication(this);
 		}
 	}
-	public static class IntconstantContext extends ExprContext {
+	public static class IntConstantContext extends ExprContext {
 		public TerminalNode INT() { return getToken(FeatherweightJavaScriptParser.INT, 0); }
-		public IntconstantContext(ExprContext ctx) { copyFrom(ctx); }
+		public IntConstantContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterIntconstant(this);
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterIntConstant(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitIntconstant(this);
-		}
-	}
-	public static class NullconstantContext extends ExprContext {
-		public TerminalNode NULL() { return getToken(FeatherweightJavaScriptParser.NULL, 0); }
-		public NullconstantContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterNullconstant(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitNullconstant(this);
-		}
-	}
-	public static class FunctiondeclarationContext extends ExprContext {
-		public TerminalNode FUNCTION() { return getToken(FeatherweightJavaScriptParser.FUNCTION, 0); }
-		public BlockContext block() {
-			return getRuleContext(BlockContext.class,0);
-		}
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public FunctiondeclarationContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterFunctiondeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitFunctiondeclaration(this);
-		}
-	}
-	public static class BoolconstantContext extends ExprContext {
-		public TerminalNode BOOL() { return getToken(FeatherweightJavaScriptParser.BOOL, 0); }
-		public BoolconstantContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterBoolconstant(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitBoolconstant(this);
-		}
-	}
-	public static class ExprinparenthesisContext extends ExprContext {
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public ExprinparenthesisContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterExprinparenthesis(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitExprinparenthesis(this);
-		}
-	}
-	public static class VarasgnContext extends ExprContext {
-		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
-		public TerminalNode ASSIGN() { return getToken(FeatherweightJavaScriptParser.ASSIGN, 0); }
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public VarasgnContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterVarasgn(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitVarasgn(this);
-		}
-	}
-	public static class FunctionapplicationContext extends ExprContext {
-		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public FunctionapplicationContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterFunctionapplication(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitFunctionapplication(this);
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitIntConstant(this);
 		}
 	}
 	public static class AddSubContext extends ExprContext {
@@ -581,6 +491,96 @@ public class FeatherweightJavaScriptParser extends Parser {
 			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitGtLsEq(this);
 		}
 	}
+	public static class VarRefContext extends ExprContext {
+		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
+		public VarRefContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterVarRef(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitVarRef(this);
+		}
+	}
+	public static class NullConstantContext extends ExprContext {
+		public TerminalNode NULL() { return getToken(FeatherweightJavaScriptParser.NULL, 0); }
+		public NullConstantContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterNullConstant(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitNullConstant(this);
+		}
+	}
+	public static class FunctionDeclarationContext extends ExprContext {
+		public TerminalNode FUNCTION() { return getToken(FeatherweightJavaScriptParser.FUNCTION, 0); }
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public FunctionDeclarationContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterFunctionDeclaration(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitFunctionDeclaration(this);
+		}
+	}
+	public static class BoolConstantContext extends ExprContext {
+		public TerminalNode BOOL() { return getToken(FeatherweightJavaScriptParser.BOOL, 0); }
+		public BoolConstantContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterBoolConstant(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitBoolConstant(this);
+		}
+	}
+	public static class VarDeclarationContext extends ExprContext {
+		public TerminalNode VAR() { return getToken(FeatherweightJavaScriptParser.VAR, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
+		public TerminalNode ASSIGN() { return getToken(FeatherweightJavaScriptParser.ASSIGN, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public VarDeclarationContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterVarDeclaration(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitVarDeclaration(this);
+		}
+	}
+	public static class VarAssignContext extends ExprContext {
+		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
+		public TerminalNode ASSIGN() { return getToken(FeatherweightJavaScriptParser.ASSIGN, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public VarAssignContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).enterVarAssign(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof FeatherweightJavaScriptListener ) ((FeatherweightJavaScriptListener)listener).exitVarAssign(this);
+		}
+	}
 
 	public final ExprContext expr() throws RecognitionException {
 		return expr(0);
@@ -603,7 +603,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				{
-				_localctx = new FunctiondeclarationContext(_localctx);
+				_localctx = new FunctionDeclarationContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
@@ -645,7 +645,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 2:
 				{
-				_localctx = new FunctionapplicationContext(_localctx);
+				_localctx = new FunctionApplicationContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(60);
@@ -684,7 +684,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 3:
 				{
-				_localctx = new VardeclarationContext(_localctx);
+				_localctx = new VarDeclarationContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(73);
@@ -699,7 +699,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 4:
 				{
-				_localctx = new VarrefContext(_localctx);
+				_localctx = new VarRefContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(77);
@@ -708,7 +708,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 5:
 				{
-				_localctx = new VarasgnContext(_localctx);
+				_localctx = new VarAssignContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(78);
@@ -721,7 +721,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 6:
 				{
-				_localctx = new IntconstantContext(_localctx);
+				_localctx = new IntConstantContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(81);
@@ -730,7 +730,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 7:
 				{
-				_localctx = new BoolconstantContext(_localctx);
+				_localctx = new BoolConstantContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(82);
@@ -739,7 +739,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 8:
 				{
-				_localctx = new NullconstantContext(_localctx);
+				_localctx = new NullConstantContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(83);
@@ -748,7 +748,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 9:
 				{
-				_localctx = new ExprinparenthesisContext(_localctx);
+				_localctx = new ExprinParenthesisContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(84);

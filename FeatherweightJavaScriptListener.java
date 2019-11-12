@@ -90,17 +90,17 @@ public interface FeatherweightJavaScriptListener extends ParseTreeListener {
 	 */
 	void exitSeparator(FeatherweightJavaScriptParser.SeparatorContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code vardeclaration}
+	 * Enter a parse tree produced by the {@code exprinParenthesis}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterVardeclaration(FeatherweightJavaScriptParser.VardeclarationContext ctx);
+	void enterExprinParenthesis(FeatherweightJavaScriptParser.ExprinParenthesisContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code vardeclaration}
+	 * Exit a parse tree produced by the {@code exprinParenthesis}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitVardeclaration(FeatherweightJavaScriptParser.VardeclarationContext ctx);
+	void exitExprinParenthesis(FeatherweightJavaScriptParser.ExprinParenthesisContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code MulDivMod}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
@@ -114,101 +114,29 @@ public interface FeatherweightJavaScriptListener extends ParseTreeListener {
 	 */
 	void exitMulDivMod(FeatherweightJavaScriptParser.MulDivModContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code varref}
+	 * Enter a parse tree produced by the {@code functionApplication}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterVarref(FeatherweightJavaScriptParser.VarrefContext ctx);
+	void enterFunctionApplication(FeatherweightJavaScriptParser.FunctionApplicationContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code varref}
+	 * Exit a parse tree produced by the {@code functionApplication}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitVarref(FeatherweightJavaScriptParser.VarrefContext ctx);
+	void exitFunctionApplication(FeatherweightJavaScriptParser.FunctionApplicationContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code intconstant}
+	 * Enter a parse tree produced by the {@code intConstant}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterIntconstant(FeatherweightJavaScriptParser.IntconstantContext ctx);
+	void enterIntConstant(FeatherweightJavaScriptParser.IntConstantContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code intconstant}
+	 * Exit a parse tree produced by the {@code intConstant}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitIntconstant(FeatherweightJavaScriptParser.IntconstantContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code nullconstant}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterNullconstant(FeatherweightJavaScriptParser.NullconstantContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code nullconstant}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitNullconstant(FeatherweightJavaScriptParser.NullconstantContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code functiondeclaration}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunctiondeclaration(FeatherweightJavaScriptParser.FunctiondeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code functiondeclaration}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunctiondeclaration(FeatherweightJavaScriptParser.FunctiondeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code boolconstant}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterBoolconstant(FeatherweightJavaScriptParser.BoolconstantContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code boolconstant}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitBoolconstant(FeatherweightJavaScriptParser.BoolconstantContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprinparenthesis}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprinparenthesis(FeatherweightJavaScriptParser.ExprinparenthesisContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprinparenthesis}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprinparenthesis(FeatherweightJavaScriptParser.ExprinparenthesisContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code varasgn}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterVarasgn(FeatherweightJavaScriptParser.VarasgnContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code varasgn}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitVarasgn(FeatherweightJavaScriptParser.VarasgnContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code functionapplication}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunctionapplication(FeatherweightJavaScriptParser.FunctionapplicationContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code functionapplication}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunctionapplication(FeatherweightJavaScriptParser.FunctionapplicationContext ctx);
+	void exitIntConstant(FeatherweightJavaScriptParser.IntConstantContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code addSub}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
@@ -233,6 +161,78 @@ public interface FeatherweightJavaScriptListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitGtLsEq(FeatherweightJavaScriptParser.GtLsEqContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varRef}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarRef(FeatherweightJavaScriptParser.VarRefContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varRef}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarRef(FeatherweightJavaScriptParser.VarRefContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code nullConstant}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterNullConstant(FeatherweightJavaScriptParser.NullConstantContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code nullConstant}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitNullConstant(FeatherweightJavaScriptParser.NullConstantContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code functionDeclaration}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionDeclaration(FeatherweightJavaScriptParser.FunctionDeclarationContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code functionDeclaration}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionDeclaration(FeatherweightJavaScriptParser.FunctionDeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code boolConstant}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterBoolConstant(FeatherweightJavaScriptParser.BoolConstantContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code boolConstant}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitBoolConstant(FeatherweightJavaScriptParser.BoolConstantContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varDeclaration}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarDeclaration(FeatherweightJavaScriptParser.VarDeclarationContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varDeclaration}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarDeclaration(FeatherweightJavaScriptParser.VarDeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varAssign}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarAssign(FeatherweightJavaScriptParser.VarAssignContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varAssign}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarAssign(FeatherweightJavaScriptParser.VarAssignContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code fullBlock}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#block}.

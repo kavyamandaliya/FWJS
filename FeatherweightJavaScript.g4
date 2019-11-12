@@ -54,17 +54,17 @@ stat: expr SEPARATOR                                    # bareExpr
     ;
 
 expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
-    | expr op=('+' | '-') expr							#addSub
-    | expr op=('<' | '<='| '>'| '>='| '==' ) expr		#gtLsEq
-    | FUNCTION '(' (expr)? (',' expr)* ')' block 			#functiondeclaration
-    | IDENTIFIER '(' (expr)? (',' expr)* ')'				#functionapplication
-    | VAR IDENTIFIER ASSIGN expr							#vardeclaration
-    | IDENTIFIER										#varref
-    | IDENTIFIER ASSIGN expr								#varasgn
-    | INT    											#intconstant
-    | BOOL												#boolconstant
-    | NULL                          					#nullconstant
-    | '(' expr ')'                                      #exprinparenthesis
+    | expr op=('+' | '-') expr							            # addSub
+    | expr op=('<' | '<='| '>'| '>='| '==' ) expr		    # gtLsEq
+    | FUNCTION '(' (expr)? (',' expr)* ')' block 			  # functionDeclaration
+    | IDENTIFIER '(' (expr)? (',' expr)* ')'			     	# functionApplication
+    | VAR IDENTIFIER ASSIGN expr							          # varDeclaration
+    | IDENTIFIER										                    # varRef
+    | IDENTIFIER ASSIGN expr								            # varAssign
+    | INT    											                      # intConstant
+    | BOOL												                      # boolConstant
+    | NULL                          					          # nullConstant
+    | '(' expr ')'                                      # exprinParenthesis
     ;
 
 block: '{' stat* '}'                                    # fullBlock

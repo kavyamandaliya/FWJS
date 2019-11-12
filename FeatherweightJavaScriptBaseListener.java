@@ -100,13 +100,13 @@ public class FeatherweightJavaScriptBaseListener implements FeatherweightJavaScr
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVardeclaration(FeatherweightJavaScriptParser.VardeclarationContext ctx) { }
+	@Override public void enterExprinParenthesis(FeatherweightJavaScriptParser.ExprinParenthesisContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVardeclaration(FeatherweightJavaScriptParser.VardeclarationContext ctx) { }
+	@Override public void exitExprinParenthesis(FeatherweightJavaScriptParser.ExprinParenthesisContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -124,97 +124,25 @@ public class FeatherweightJavaScriptBaseListener implements FeatherweightJavaScr
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarref(FeatherweightJavaScriptParser.VarrefContext ctx) { }
+	@Override public void enterFunctionApplication(FeatherweightJavaScriptParser.FunctionApplicationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarref(FeatherweightJavaScriptParser.VarrefContext ctx) { }
+	@Override public void exitFunctionApplication(FeatherweightJavaScriptParser.FunctionApplicationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIntconstant(FeatherweightJavaScriptParser.IntconstantContext ctx) { }
+	@Override public void enterIntConstant(FeatherweightJavaScriptParser.IntConstantContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIntconstant(FeatherweightJavaScriptParser.IntconstantContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNullconstant(FeatherweightJavaScriptParser.NullconstantContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNullconstant(FeatherweightJavaScriptParser.NullconstantContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFunctiondeclaration(FeatherweightJavaScriptParser.FunctiondeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFunctiondeclaration(FeatherweightJavaScriptParser.FunctiondeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterBoolconstant(FeatherweightJavaScriptParser.BoolconstantContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitBoolconstant(FeatherweightJavaScriptParser.BoolconstantContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprinparenthesis(FeatherweightJavaScriptParser.ExprinparenthesisContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprinparenthesis(FeatherweightJavaScriptParser.ExprinparenthesisContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterVarasgn(FeatherweightJavaScriptParser.VarasgnContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVarasgn(FeatherweightJavaScriptParser.VarasgnContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFunctionapplication(FeatherweightJavaScriptParser.FunctionapplicationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFunctionapplication(FeatherweightJavaScriptParser.FunctionapplicationContext ctx) { }
+	@Override public void exitIntConstant(FeatherweightJavaScriptParser.IntConstantContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -239,6 +167,78 @@ public class FeatherweightJavaScriptBaseListener implements FeatherweightJavaScr
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitGtLsEq(FeatherweightJavaScriptParser.GtLsEqContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarRef(FeatherweightJavaScriptParser.VarRefContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarRef(FeatherweightJavaScriptParser.VarRefContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNullConstant(FeatherweightJavaScriptParser.NullConstantContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNullConstant(FeatherweightJavaScriptParser.NullConstantContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFunctionDeclaration(FeatherweightJavaScriptParser.FunctionDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunctionDeclaration(FeatherweightJavaScriptParser.FunctionDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBoolConstant(FeatherweightJavaScriptParser.BoolConstantContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBoolConstant(FeatherweightJavaScriptParser.BoolConstantContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarDeclaration(FeatherweightJavaScriptParser.VarDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarDeclaration(FeatherweightJavaScriptParser.VarDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarAssign(FeatherweightJavaScriptParser.VarAssignContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarAssign(FeatherweightJavaScriptParser.VarAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
