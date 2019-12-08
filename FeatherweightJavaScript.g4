@@ -54,16 +54,16 @@ stat: expr SEPARATOR                                    # bareExpr
     ;
 
 expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
-    | expr op=('+' | '-') expr							            # addSub
-    | expr op=('<' | '<='| '>'| '>='| '==' ) expr		    # gtLsEq
-    | FUNCTION '(' (expr)? (',' expr)* ')' block 			  # functionDeclaration
-    | IDENTIFIER '(' (expr)? (',' expr)* ')'			     	# functionApplication
-    | VAR IDENTIFIER ASSIGN expr							          # varDeclaration
-    | IDENTIFIER										                    # varRef
-    | IDENTIFIER ASSIGN expr								            # varAssign
-    | INT    											                      # intConstant
-    | BOOL												                      # boolConstant
-    | NULL                          					          # nullConstant
+    | expr op=('+' | '-') expr							# addSub
+    | expr op=('<' | '<='| '>'| '>='| '==' ) expr		# gtLsEq
+    | FUNCTION '(' (expr)? (',' expr)* ')' block 	    # functionDeclaration
+    | IDENTIFIER '(' (expr)? (',' expr)* ')'			# functionApplication
+    | VAR IDENTIFIER ASSIGN expr						# varDeclaration
+    | IDENTIFIER										# varRef
+    | IDENTIFIER ASSIGN expr							# varAssign
+    | INT    											# intConstant
+    | BOOL												# boolConstant
+    | NULL                          					# nullConstant
     | '(' expr ')'                                      # exprinParenthesis
     ;
 
