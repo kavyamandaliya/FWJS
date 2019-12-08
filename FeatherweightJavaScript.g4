@@ -56,8 +56,8 @@ stat: expr SEPARATOR                                    # bareExpr
 expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
     | expr op=('+' | '-') expr							# addSub
     | expr op=('<' | '<='| '>'| '>='| '==' ) expr		# gtLsEq
-    | FUNCTION params '{' stat* '}'              	    # functionDeclaration
-    | IDENTIFIER '(' (expr)? (',' expr)* ')'			# functionApplication
+    | FUNCTION params '{' block* '}'              	    # functionDeclaration
+    | expr args                             			# functionApplication
     | VAR IDENTIFIER ASSIGN expr						# varDeclaration
     | IDENTIFIER										# varRef
     | IDENTIFIER ASSIGN expr							# varAssign
