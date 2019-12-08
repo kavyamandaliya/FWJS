@@ -67,6 +67,10 @@ expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
     | '(' expr ')'                                      # exprinParenthesis
     ;
 
+args: '(' (expr (',' expr)*)? ')' # arguments;
+
+params: '(' (ID (',' ID)*)? ')' # parameters;
+
 block: '{' stat* '}'                                    # fullBlock
      | stat                                             # simpBlock
      ;
