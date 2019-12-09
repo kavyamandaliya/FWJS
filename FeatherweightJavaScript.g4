@@ -8,7 +8,7 @@ IF        : 'if' ;
 ELSE      : 'else' ;
 WHILE     : 'while';
 FUNCTION  : 'function';
-VAR		  : 'var';
+VAR       : 'var';
 PRINT     : 'print';
 
 // Literals
@@ -30,7 +30,7 @@ LTE       : '<=';
 EQUAL     : '==';
 
 //Identifiers
-IDENTIFIER: ([a-zA-Z]|'_') ([a-zA-Z0-9]|'_')*;
+IDENTIFIER: [a-zA-Z_][a-zA-Z_0-9]*;
 ASSIGN: '=';
 
 // Whitespace and comments
@@ -40,7 +40,7 @@ LINE_COMMENT  : '//' ~[\n\r]* -> skip ;
 WS            : [ \t]+ -> skip ; // ignore whitespace
 
 
-// ***Parsing rules ***
+// **Parsing rules **
 
 /** The start rule */
 prog: stat+ ;
@@ -54,16 +54,16 @@ stat: expr SEPARATOR                                    # bareExpr
     ;
 
 expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
-    | expr op=('+' | '-') expr							# addSub
-    | expr op=('<' | '<='| '>'| '>='| '==' ) expr		# gtLsEq
-    | FUNCTION params '{' block* '}'              	    # functionDeclaration
-    | expr args                             			# functionApplication
-    | VAR IDENTIFIER ASSIGN expr						# varDeclaration
-    | IDENTIFIER										# varRef
-    | IDENTIFIER ASSIGN expr							# varAssign
-    | INT    											# intConstant
-    | BOOL												# boolConstant
-    | NULL                          					# nullConstant
+    | expr op=('+' | '-') expr                          # addSub
+    | expr op=('<' | '<='| '>'| '>='| '==' ) expr       # gtLsEq
+    | FUNCTION params '{' stat* '}'                             # functionDeclaration
+    | expr args                                         # functionApplication
+    | VAR IDENTIFIER ASSIGN expr                        # varDeclaration
+    | IDENTIFIER                                        # varRef
+    | IDENTIFIER ASSIGN expr                            # varAssign
+    | INT                                               # intConstant
+    | BOOL                                              # boolConstant
+    | NULL                                              # nullConstant
     | '(' expr ')'                                      # exprinParenthesis
     ;
 
